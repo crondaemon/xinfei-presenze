@@ -22,7 +22,7 @@ namespace :db do
 					user = User.find_or_create_by(fullname: name)
 					users[name] = user
 				end
-				Presence.create(user: user, when: day)
+				Presence.find_or_create_by(user: user, when: day)
 			end
 		end
 	end

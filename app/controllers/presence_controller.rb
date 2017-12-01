@@ -20,4 +20,8 @@ class PresenceController < ApplicationController
 		end
 		render plain: user.id
 	end
+
+	def stats
+		@pres_by_day = Presence.group(:when).count
+	end
 end

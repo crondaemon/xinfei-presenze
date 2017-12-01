@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'presence/day'
   get 'presence/mark'
+  get 'presence/stats'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
