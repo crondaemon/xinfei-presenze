@@ -23,7 +23,6 @@ class User < ActiveRecord::Base
   def set_random_fields
     self.username = fullname.gsub(" ", '').downcase if !self.username || self.username.empty?
     if !self.password
-      puts "PIPOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
       self.password = SecureRandom.hex(16)
       self.password_confirmation = self.password
     end
@@ -41,4 +40,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  def present?
+    self.presences.where(when: Date.today).size > 0
+  end
 end

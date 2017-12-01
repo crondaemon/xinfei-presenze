@@ -12,4 +12,5 @@ User.create do |u|
   u.password              = 'cisalpina'
   u.password_confirmation = 'cisalpina'
   u.roles                 = Chaltron.roles
+  u.active								= true
 end
