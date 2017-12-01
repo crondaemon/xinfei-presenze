@@ -14,6 +14,18 @@ class Chaltron::UsersController < ApplicationController
     @users = @users.where(sign_in_count: 0) if @filters[:activity] == 'no_login'
   end
 
+  def disable
+    user = User.find(params['id'])
+    day = params['day']
+    if !user
+      flash[:error] = 'Utente non trovato'
+    else
+      user.active = false
+      user.save
+    end
+    redirect_to presence_day_path(day: day)
+  end
+
   def show
   end
 
