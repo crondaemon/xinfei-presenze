@@ -1,5 +1,6 @@
 class PresenceController < ApplicationController
-	def today
+	def day
 		@users = User.where(active: true)
+		@day = Date.today
 	end
 end

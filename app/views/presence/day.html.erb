@@ -1,0 +1,28 @@
+<div class='container-fluid'>
+  <h3 class='page-header'>Presenze del giorno <%= @day %></h3>
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class='panel panel-default'>
+        <div class='panel-body'>
+          <%= content_tag 'table', class: 'table table-striped', id: 'sources-table' do %>
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<% @users.each do |user| %>
+								<tr>
+									<td><%= user.fullname %></td>
+									<td>pippo</td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
