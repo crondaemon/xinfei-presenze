@@ -1,10 +1,17 @@
+<%
+	classes = 'btn btn-lg btn-primary'
+%>
+
 <div class='container-fluid'>
-  <div class='row'>
-    <div class='col-lg-12 text-center'>
-      <h1 class='page-header'>Xin Fei</h1>
-      <% if current_user %>
-        <%= button_to 'Segna', home_index_path, class: 'btn btn-lg btn-primary' %>
-      <% end %>
-    </div>
-  </div>
+	<div class='row'>
+		<div class='col-lg-12 text-center'>
+			<h1 class='page-header'>Benvenuto nel sistema presenze Xin Fei</h1>
+			<% if current_user %>
+				<%= link_to 'Segna', presence_day_path, class: classes %>
+				<%= link_to 'Statistiche', presence_stats_path, class: classes %>
+			<% else %>
+				<%= link_to 'Entra', new_user_session_path, class: classes %>
+			<% end %>
+		</div>
+	</div>
 </div>
