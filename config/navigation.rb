@@ -54,14 +54,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>.
     #
 
-    primary.item :news, { icon: 'fa fa-fw fa-bullhorn', text: 'Link 1' }, home_test1_path
-    primary.item :concerts, { icon: 'fa fa-fw fa-line-chart', text: 'Link 2' }, home_test2_path
-    primary.item :video, { icon: 'fa fa-fw fa-book', text: 'Link 3' }, home_test3_path
-    primary.item :info, { icon: 'fa fa-fw fa-hand-o-down', text: 'Submenu' }, '#' do |info_nav|
-      info_nav.item :main_info_page, { icon: 'fa fa-fw fa-paw', text: 'Link 4' }, home_test4_path
-      info_nav.item :about_info_page, { icon: 'fa fa-fw fa-headphones', text: 'Link 5' }, home_test5_path
-      info_nav.item :contact_info_page, { icon: 'fa fa-fw fa-soccer-ball-o', text: 'Link 6' }, home_test6_path
-    end
-
+    primary.item :news, { icon: 'fa fa-fw fa-pencil', text: 'Segna' }, home_index_path, if: proc { current_user }
+    primary.item :concerts, { icon: 'fa fa-fw fa-line-chart', text: 'Statistiche' }, home_index_path, if: proc { current_user }
   end
 end

@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   adapter: sqlite3
-  database: db/presenze_development.sqlite3
+  database: db/development.sqlite3
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
