@@ -55,6 +55,6 @@ SimpleNavigation::Configuration.run do |navigation|
     #
 
     primary.item :news, { icon: 'fa fa-fw fa-pencil', text: 'Segna' }, presence_day_path, if: proc { current_user }
-    primary.item :concerts, { icon: 'fa fa-fw fa-line-chart', text: 'Statistiche' }, home_index_path, if: proc { current_user }
+    primary.item :concerts, { icon: 'fa fa-fw fa-line-chart', text: 'Statistiche' }, presence_stats_path, if: proc { current_user }
   end
 end
