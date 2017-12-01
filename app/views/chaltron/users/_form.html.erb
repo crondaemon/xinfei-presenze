@@ -1,0 +1,23 @@
+<%= bootstrap_form_for(@user, layout: :horizontal) do |f| %>
+
+  <%= f.text_field :username %>
+  <%= f.text_field :fullname %>
+  <%= f.email_field :email %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.form_group :active, label: { text: 'Attivo' } do %>
+    <%= f.check_box :active, label: '' %>
+  <% end %>
+  <% if current_user == @user %>
+    <%= f.role_select disabled: 'user_admin' %>
+  <% else %>
+    <%= f.role_select %>
+  <% end %>
+
+
+  <%= f.form_group class: 'form-actions' do %>
+    <%= f.submit submit_text, class: 'btn btn-primary' %>
+    <%= back_link class: 'btn btn-default pull-right', text: t('.cancel_text'), icon: 'times' %>
+  <% end %>
+
+<% end %>

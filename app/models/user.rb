@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   # Virtual attribute for authenticating by either username or email
   attr_accessor :login
 
-  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable,
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable,
          :timeoutable, :omniauthable
 
   validates :username, presence: true, uniqueness: { scope: :provider, case_sensitive: false }
@@ -22,8 +22,11 @@ class User < ActiveRecord::Base
 
   def set_random_fields
     self.username = fullname.gsub(" ", '').downcase if !self.username || self.username.empty?
-    self.password = SecureRandom.hex(16) if !self.password || self.password.empty?
-    self.password_confirmation = self.password
+    if !self.password
+      puts "PIPOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
+      self.password = SecureRandom.hex(16)
+      self.password_confirmation = self.password
+    end
     self.email = "#{self.username}@xinfei.org" if !self.email || self.email.empty?
   end
 

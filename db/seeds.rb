@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create do |u|
-  u.username              = 'bella'
-  u.fullname              = 'Bellatrix Lestrange'
+  u.username              = 'dario'
+  u.fullname              = 'Dario'
   u.email                 = 'bellatrix.lestrange@azkaban.co.uk'
-  u.password              = 'password.1'
-  u.password_confirmation = 'password.1'
+  u.password              = 'cisalpina'
+  u.password_confirmation = 'cisalpina'
   u.roles                 = Chaltron.roles
 end

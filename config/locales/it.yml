@@ -42,5 +42,3 @@ it:
         ldap_created:
           one: "%{current} ha creato l'utente %{user} da LDAP"
           other: "%{current} ha creato %{count} utenti da LDAP (%{user})"
-  roles:
-    active: 'Attivo'
