@@ -24,4 +24,16 @@ class PresenceController < ApplicationController
 	def stats
 		@pres_by_day = Presence.group(:when).count
 	end
+
+  def disable
+    user = User.find(params['id'])
+    day = params['day']
+    if !user
+      flash[:error] = 'Utente non trovato'
+    else
+      user.active = false
+      user.save
+    end
+    redirect_to presence_day_path(day: day)
+  end
 end
