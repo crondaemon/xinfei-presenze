@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 9) do
   end
 
   create_table "presences", force: :cascade do |t|
-    t.datetime "when"
+    t.date "when"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

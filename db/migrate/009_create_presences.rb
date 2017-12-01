@@ -1,7 +1,7 @@
 class CreatePresences < ActiveRecord::Migration[5.1]
   def change
     create_table :presences do |t|
-      t.datetime :when
+      t.date :when
       t.integer :user_id
 
       t.timestamps
