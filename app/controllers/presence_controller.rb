@@ -2,7 +2,7 @@ class PresenceController < ApplicationController
 	before_action :authenticate_user!
 
 	def day
-		@users = User.where(active: true)
+		@users = User.where(active: true).order(:fullname)
 		@day = params['day'] ? Date.parse(params['day']) : Date.today
 	end
 

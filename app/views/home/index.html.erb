@@ -5,13 +5,16 @@
 <div class='container-fluid'>
 	<div class='row'>
 		<div class='col-lg-12 text-center'>
-			<h1 class='page-header'>Benvenuto nel sistema presenze Xin Fei</h1>
-			<% if current_user %>
-				<%= link_to 'Segna', presence_day_path, class: classes %>
-				<%= link_to 'Statistiche', presence_stats_path, class: classes %>
-			<% else %>
-				<%= link_to 'Entra', new_user_session_path, class: classes %>
-			<% end %>
+			<div class='jumbotron'>
+				<h1>Presenze Xin Fei</h1>
+				<p>Benvenuto nel sistem delle presenze Xin Fei</p>
+				<% if current_user %>
+					<%= link_to 'Segna', presence_day_path, class: classes %>
+					<%= link_to 'Statistiche', presence_stats_path, class: classes %>
+				<% else %>
+					<%= link_to 'Entra', new_user_session_path, class: classes %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>
