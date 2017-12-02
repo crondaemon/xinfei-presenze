@@ -1,12 +1,12 @@
 <div class='container-fluid'>
 	<div class='row'>
 		<div class='col-lg-12 text-center'>
-			<div class="panel panel-default">
-				<div class="panel-body">
+			<div class='panel panel-heading'>
+				<div class='jumbotron'>
 					<h1>Scegli il giorno</h1>
 					<%= bootstrap_form_tag url: presence_day_path, layout: :inline do |f| %>
 						<%= f.text_field '', class: 'datetimepicker' %>
-						<%= f.submit 'Vai', class: 'btn btn-lg btn-primary' %>
+						<%= f.submit 'Vai', class: 'btn btn-primary' %>
 					<% end %>
 				</div>
 			</div>
