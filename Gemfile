@@ -57,3 +57,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'chaltron'
 gem 'mysql2'
 gem 'chartkick'
+gem 'rails-bootstrap-datepicker'

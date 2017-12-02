@@ -36,4 +36,7 @@ class PresenceController < ApplicationController
     end
     redirect_to presence_day_path(day: day)
   end
+
+  def select
+  end
 end

@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def present?
-    self.presences.where(when: Date.today).size > 0
+  def present?(day)
+    self.presences.where(when: day).size > 0
   end
 end

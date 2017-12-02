@@ -10,6 +10,7 @@
 				<p>Benvenuto nel sistema delle presenze Xin Fei</p>
 				<% if current_user %>
 					<%= link_to 'Segna', presence_day_path, class: classes %>
+					<%= link_to 'Scegli giorno', presence_select_path, class: classes %>
 					<%= link_to 'Statistiche', presence_stats_path, class: classes %>
 				<% else %>
 					<%= link_to 'Entra', new_user_session_path, class: classes %>

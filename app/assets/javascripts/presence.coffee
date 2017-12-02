@@ -21,3 +21,9 @@ $(document).on "turbolinks:load", ->
 			error: (data) ->
 				printError(data)
 		})
+
+	$('.datetimepicker').datepicker({
+		format: 'yyyy-mm-dd',
+		autoclose: true,
+		language: 'it'
+		})

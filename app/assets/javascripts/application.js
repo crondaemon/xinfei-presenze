@@ -15,4 +15,5 @@
 //= require chaltron
 //= require highcharts
 //= require chartkick
+//= require bootstrap-datepicker
 //= require_tree .
