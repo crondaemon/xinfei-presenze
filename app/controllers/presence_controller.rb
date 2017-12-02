@@ -23,6 +23,7 @@ class PresenceController < ApplicationController
 
 	def stats
 		@pres_by_day = Presence.group(:when).count
+		@pres_by_day_last_year = Presence.where(when: 1.year.ago..Date.today).group(:when).count
 	end
 
   def disable
