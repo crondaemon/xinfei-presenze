@@ -36,6 +36,16 @@
 									<% end %>
 								</tr>
 							<% end %>
+							<tr>
+								<td><strong>Totale</strong></td>
+								<% @days.each do |day| %>
+									<td>
+										<span class='badge'>
+											<%= @presence_persons.values.flatten.select{|d| d == day}.count %>
+										</span>
+									</td>
+								<% end %>
+							</tr>
 						</tbody>
 					<% end %>
 				</div>
