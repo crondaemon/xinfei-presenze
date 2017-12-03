@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'presence/stats'
   get 'presence/disable'
   get 'presence/select'
+  get 'presence/show'
+  post 'presence/show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -40,4 +40,17 @@ class PresenceController < ApplicationController
 
   def select
   end
+
+  def show
+  	@from = params['from'] && !params['from'].empty? ? Date.parse(params['from']) : 3.months.ago
+  	@to = params['to'] && !params['to'].empty? ? Date.parse(params['to']) : Date.today
+  	@presence_persons = {}
+  	presences = Presence.where(when: @from..@to)
+  	presences.each do |presence|
+  		@presence_persons[presence.user.fullname] = [] if !@presence_persons[presence.user.fullname]
+  		@presence_persons[presence.user.fullname] << presence.when
+  	end
+  	@days = presences.pluck(:when).uniq
+  	@presence_persons = @presence_persons.to_a.sort_by!{|e| e.first}.to_h
+  end
 end

@@ -5,7 +5,7 @@
 				<div class='jumbotron'>
 					<h1>Scegli il giorno</h1>
 					<%= bootstrap_form_tag url: presence_day_path, layout: :inline do |f| %>
-						<%= f.text_field '', class: 'datetimepicker' %>
+						<%= f.text_field :day, label: 'Giorno', class: 'datetimepicker' %>
 						<%= f.submit 'Vai', class: 'btn btn-primary' %>
 					<% end %>
 				</div>

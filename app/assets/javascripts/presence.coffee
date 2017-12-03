@@ -27,3 +27,6 @@ $(document).on "turbolinks:load", ->
 		autoclose: true,
 		language: 'it'
 		})
+
+	$('#date-change').on 'click', (e) ->
+		$('#date-change-form').fadeToggle()

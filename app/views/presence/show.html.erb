@@ -1,0 +1,45 @@
+<div class='container-fluid'>
+	<h3 class='page-header'>Presenze del periodo <%= @from.strftime('%e %b') %> - <%= @to.strftime('%e %b') %></h3>
+	<div class='row'>
+		<div class='col-md-12'>
+			<%= content_tag :a, 'Cambia periodo', id: 'date-change' %>
+			<div class='panel panel-default display-none' id='date-change-form'>
+				<div class='panel-body'>
+					<%= bootstrap_form_tag url: presence_show_path, layout: :inline do |f| %>
+						<%= f.text_field :from, placeholder: 'Inizio', class: 'datetimepicker form-control' %>
+						<%= f.text_field :to, placeholder: 'Fine', class: 'datetimepicker form-control' %>
+						<%= f.submit 'Invia', class: 'btn btn-primary' %>
+					<% end %>
+				</div>
+			</div>
+	  	<div class='panel panel-default'>
+				<div class='panel-body'>
+					<%= content_tag 'table', class: 'table table-striped table-hover', id: 'sources-table' do %>
+						<thead>
+							<tr>
+								<th></th>
+								<% @days.each do |day| %>
+									<th><%= day.strftime('%e %b') %></th>
+								<% end %>
+							</tr>
+						</thead>
+						<tbody>
+							<% @presence_persons.each_pair do |name, days| %>
+								<tr>
+									<td><%= name %></td>
+									<% @days.each do |day| %>
+										<td>
+											<% if days.include? day %>
+												X
+											<% end %>
+										</td>
+									<% end %>
+								</tr>
+							<% end %>
+						</tbody>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
