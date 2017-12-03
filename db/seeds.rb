@@ -11,6 +11,16 @@ User.create do |u|
   u.email                 = 'dariolombardo@xinfei.org'
   u.password              = 'cisalpina'
   u.password_confirmation = 'cisalpina'
+  u.roles                 = [ 'admin', 'user_admin' ]
+  u.active                = true
+end
+
+User.create do |u|
+  u.username              = 'presenze'
+  u.fullname              = 'Presenze'
+  u.email                 = 'presenze@xinfei.org'
+  u.password              = 'xfpres'
+  u.password_confirmation = 'xfpres'
   u.roles                 = Chaltron.roles
-  u.active								= true
+  u.active                = false
 end
