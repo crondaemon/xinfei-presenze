@@ -19,7 +19,7 @@
 							<tr>
 								<th></th>
 								<% @days.each do |day| %>
-									<th><%= l(day, format: '%e %b') %></th>
+									<th><%= link_to(l(day, format: '%e %b'), presence_day_path(day: day)) %></th>
 								<% end %>
 							</tr>
 						</thead>
