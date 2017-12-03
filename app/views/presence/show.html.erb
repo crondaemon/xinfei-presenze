@@ -22,6 +22,8 @@
 								<% @days.each do |day| %>
 									<th><%= link_to(l(day, format: '%e %b'), presence_day_path(day: day)) %></th>
 								<% end %>
+								<th></th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -35,6 +37,12 @@
 											<% end %>
 										</td>
 									<% end %>
+									<td>
+										<%= days.count %>/<%= @days.count %>
+									</td>
+									<td>
+										<span class='badge'><%= (days.count.to_f / @days.count * 100 ).round %>%</span>
+									</td>
 								</tr>
 							<% end %>
 							<tr>
@@ -46,6 +54,8 @@
 										</span>
 									</td>
 								<% end %>
+								<td></td>
+								<td></td>
 							</tr>
 						</tbody>
 					<% end %>
