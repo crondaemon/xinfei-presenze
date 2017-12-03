@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'presence/select'
   get 'presence/show'
   post 'presence/show'
+  get 'presence/bulk'
+  post 'presence/bulk_save'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

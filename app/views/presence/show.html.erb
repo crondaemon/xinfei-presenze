@@ -30,7 +30,7 @@
 									<% @days.each do |day| %>
 										<td>
 											<% if days.include? day %>
-												X
+												<%= image_tag 'check.png', height: '15px' %>
 											<% end %>
 										</td>
 									<% end %>

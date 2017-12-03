@@ -1,0 +1,15 @@
+<div class='container-fluid'>
+	<h3 class='page-header'>Inserimento massivo</h3>
+	<div class='row'>
+		<div class='col-md-12'>
+			<div class='panel panel-default'>
+				<div class='panel-body'>
+					<%= bootstrap_form_tag url: presence_bulk_save_path do |f| %>
+						<%= f.text_area :names, label: 'Nomi', placeholder: 'Inserire nome e cognome di ogni persona', rows: 20 %>
+						<%= f.submit 'Invia', class: 'btn btn-primary' %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

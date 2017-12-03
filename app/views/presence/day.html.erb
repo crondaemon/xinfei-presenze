@@ -21,7 +21,7 @@
 									<td class='click-presence' data-user='<%= user.id %>' data-day='<%= @day %>'><%= user.fullname %></td>
 									<td class='click-presence' data-user='<%= user.id %>' data-day='<%= @day %>'>
 										<div id='user-<%= user.id %>-present' class='<%= user.present?(@day) ? "" : "display-none" %>'>
-											<%= image_tag 'check.png', height: '17px' %>
+											<%= image_tag 'check.png', height: '15px' %>
 										</div>
 									</td>
 									<% if current_user.is?(:admin) %>
