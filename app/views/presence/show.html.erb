@@ -1,5 +1,9 @@
 <div class='container-fluid'>
-	<h3 class='page-header'>Presenze del periodo <%= l(@from, format: '%e %B') %> - <%= l(@to, format: '%e %B') %></h3>
+	<h3 class='page-header text-center'>Presenze del periodo<br/>
+		<span class='label label-primary'>
+			<%= l(@from, format: '%e %B') %> - <%= l(@to, format: '%e %B') %>
+		</span>
+	</h3>
 	<div class='row'>
 		<div class='col-md-12'>
 			<%= content_tag :a, 'Cambia periodo', id: 'date-change' %>
