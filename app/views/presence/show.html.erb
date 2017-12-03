@@ -1,5 +1,5 @@
 <div class='container-fluid'>
-	<h3 class='page-header'>Presenze del periodo <%= @from.strftime('%e %b') %> - <%= @to.strftime('%e %b') %></h3>
+	<h3 class='page-header'>Presenze del periodo <%= l(@from, format: '%e %B') %> - <%= l(@to, format: '%e %B') %></h3>
 	<div class='row'>
 		<div class='col-md-12'>
 			<%= content_tag :a, 'Cambia periodo', id: 'date-change' %>
@@ -19,7 +19,7 @@
 							<tr>
 								<th></th>
 								<% @days.each do |day| %>
-									<th><%= day.strftime('%e %b') %></th>
+									<th><%= l(day, format: '%e %b') %></th>
 								<% end %>
 							</tr>
 						</thead>
