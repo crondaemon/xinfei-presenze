@@ -6,8 +6,8 @@
 			<div class='panel panel-default display-none' id='date-change-form'>
 				<div class='panel-body'>
 					<%= bootstrap_form_tag url: presence_show_path, layout: :inline do |f| %>
-						<%= f.text_field :from, placeholder: 'Inizio', class: 'datetimepicker form-control' %>
-						<%= f.text_field :to, placeholder: 'Fine', class: 'datetimepicker form-control' %>
+						<%= f.text_field :from, skip_label: true, placeholder: 'Inizio', class: 'datetimepicker form-control' %>
+						<%= f.text_field :to, skip_label: true, placeholder: 'Fine', class: 'datetimepicker form-control' %>
 						<%= f.submit 'Invia', class: 'btn btn-primary' %>
 					<% end %>
 				</div>
