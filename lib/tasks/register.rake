@@ -22,6 +22,10 @@ namespace :db do
 					user = User.find_or_create_by(fullname: name)
 					users[name] = user
 				end
+
+				if !user.valid?
+					user = User.find_by_username(user.username)
+				end
 				Presence.find_or_create_by(user: user, when: day)
 			end
 		end
