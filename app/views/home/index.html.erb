@@ -1,19 +1,17 @@
-<%
-	classes = 'btn btn-lg btn-primary'
-%>
-
 <div class='container-fluid'>
 	<div class='row'>
-		<div class='col-lg-12 text-center'>
+		<div class='col-xs-12 text-center'>
 			<div class='panel panel-heading'>
 				<div class='jumbotron'>
 					<h1>Presenze Xin Fei</h1>
 					<p>Benvenuto nel sistema delle presenze Xin Fei</p>
 					<% if current_user %>
-						<%= link_to 'Segna', presence_day_path, class: classes %>
-						<%= link_to 'Scegli giorno', presence_select_path, class: classes %>
-						<%= link_to 'Mostra', presence_show_path, class: classes %>
-						<%= link_to 'Statistiche', presence_stats_path, class: classes %>
+						<div class='btn-group hidden-xs'>
+							<%= home_buttons %>
+						</div>
+						<div class='btn-group-vertical visible-xs'>
+							<%= home_buttons %>
+						</div>
 					<% else %>
 						<%= link_to 'Entra', new_user_session_path, class: classes %>
 					<% end %>
