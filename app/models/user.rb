@@ -14,13 +14,15 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: { scope: :provider, case_sensitive: false }
 
-  before_validation :set_random_fields
+  before_validation :fix_values
 
   def display_name
     fullname.presence || username
   end
 
-  def set_random_fields
+  def fix_values
+    self.fullname = self.fullname.split.map(&:capitalize).join(' ')
+    
     self.username = fullname.gsub(" ", '').downcase if !self.username || self.username.empty?
     if !self.password
       self.password = SecureRandom.hex(16)
