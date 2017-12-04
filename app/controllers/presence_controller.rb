@@ -52,6 +52,11 @@ class PresenceController < ApplicationController
 		end
 		@days = presences.pluck(:when).uniq
 		@presence_persons = @presence_persons.to_a.sort_by!{|e| e.first}.to_h
+
+		respond_to do |format|
+			format.html
+			format.csv
+		end
 	end
 
 	def bulk
