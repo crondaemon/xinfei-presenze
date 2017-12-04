@@ -12,7 +12,7 @@
 							<tr>
 								<th>Nome</th>
 								<th>Presente</th>
-								<% if current_user.is?(:admin) %>
+								<% if current_user.is?(:user_admin) %>
 									<th></th>
 									<th></th>
 								<% end %>
@@ -27,7 +27,7 @@
 											<%= image_tag 'check.png', height: '15px' %>
 										</div>
 									</td>
-									<% if current_user.is?(:admin) %>
+									<% if current_user.is?(:user_admin) %>
 										<td><%= link_to('Mostra', user) %></td>
 										<td><%= link_to('Disabilita', presence_disable_path(id: user, day: @day)) if current_user != user %></td>
 									<% end %>
