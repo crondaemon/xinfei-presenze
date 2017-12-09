@@ -12,5 +12,6 @@
  *
  *= require_tree .
  *= require chaltron
+ *= require BootstrapXL
  *= require_self
  */

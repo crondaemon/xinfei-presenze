@@ -10,11 +10,11 @@
 					<%= content_tag 'table', class: 'table table-striped', id: 'sources-table' do %>
 						<thead>
 							<tr>
-								<th class='day-font hidden-lg hidden-xl'>Nome</th>
-								<th class='visible-lg visible-xl'>Nome</th>
+								<th class='day-font hidden-xl'>Nome</th>
+								<th class='visible-xl'>Nome</th>
 
-								<th class='day-font hidden-lg hidden-xl'>Presente</th>
-								<th class='visible-lg visible-xl'>Presente</th>
+								<th class='day-font hidden-xl'>Presente</th>
+								<th class='visible-xl'>Presente</th>
 
 								<% if current_user.is?(:user_admin) %>
 									<th></th>
@@ -25,18 +25,18 @@
 						<tbody>
 							<% @users.each do |user| %>
 								<tr>
-									<td class='click-presence visible-lg visible-xl' data-user='<%= user.id %>' data-day='<%= @day %>'>
+									<td class='click-presence visible-xl' data-user='<%= user.id %>' data-day='<%= @day %>'>
 										<%= user.fullname %>
 									</td>
-									<td class='click-presence day-font hidden-lg hidden-xl' data-user='<%= user.id %>' data-day='<%= @day %>'>
+									<td class='click-presence day-font hidden-xl' data-user='<%= user.id %>' data-day='<%= @day %>'>
 										<%= user.fullname %>
 									</td>
 									<td class='click-presence' data-user='<%= user.id %>' data-day='<%= @day %>'>
 										<div id='user-<%= user.id %>-present' class='<%= user.present?(@day) ? "" : "display-none" %>'>
-											<div class='click-presence visible-lg visible-xl'>
+											<div class='click-presence visible-xl'>
 												<%= icon('check') %>
 											</div>
-											<div class='click-presence day-font hidden-lg hidden-xl'>
+											<div class='click-presence day-font hidden-xl'>
 												<%= icon('check') %>
 											</div>
 										</div>
