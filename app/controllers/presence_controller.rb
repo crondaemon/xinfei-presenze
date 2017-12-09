@@ -50,7 +50,7 @@ class PresenceController < ApplicationController
 			@presence_persons[presence.user.fullname] = [] if !@presence_persons[presence.user.fullname]
 			@presence_persons[presence.user.fullname] << presence.when
 		end
-		@days = presences.pluck(:when).uniq
+		@days = presences.pluck(:when).uniq.sort
 		@presence_persons = @presence_persons.to_a.sort_by!{|e| e.first}.to_h
 
 		respond_to do |format|
