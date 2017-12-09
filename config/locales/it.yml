@@ -25,6 +25,8 @@ it:
       it_s_you: Sei tu!
       missing_field: Manca!
       already_present: Giá presente!
+      index:
+        bulk_insert: Inserimento massivo
     logs:
       severity:
         info: Info
