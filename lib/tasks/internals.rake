@@ -8,7 +8,7 @@ internal_users = [
 
 namespace :db do
 	desc 'Load admin users'
-	task users: :environment do
+	task admins: :environment do
 		internal_users.each do |username|
 			user = User.find_by_username(username)
 			user.password = 'xfpres'
