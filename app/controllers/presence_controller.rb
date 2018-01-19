@@ -3,7 +3,7 @@ class PresenceController < ApplicationController
 
 	def day
 		@users = User.where(active: true).order(:fullname)
-		@day = params['day'] ? Date.parse(params['day']) : Date.today
+		@day = params['day'] && !params['day'].empty? ? Date.parse(params['day']) : Date.today
 	end
 
 	def mark
