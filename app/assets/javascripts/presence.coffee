@@ -7,7 +7,8 @@ toggleUser = (data) ->
 	$('#user-' + user_id + '-present').toggle()
 
 printError = (data) ->
-	alert("Errore. Ricaricare la pagina")
+	message = data['responseText']
+	alert("Errore: " + message)
 
 $(document).on "turbolinks:load", ->
 	$('.click-presence').on 'click', (e) ->

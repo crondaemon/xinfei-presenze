@@ -10,7 +10,7 @@ class PresenceController < ApplicationController
 		user = User.find(params['user_id'])
 		day = params['day'] || Date.today
 		if !user
-			render plain: 'Utente non esistente', status: 422
+			render plain: 'utente non esistente', status: 422
 			return
 		end
 		if user.presences.where(when: day).size == 0
