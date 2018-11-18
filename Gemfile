@@ -42,6 +42,10 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'sqlite3'
+  gem 'simplecov'
+  gem 'minitest',  '<= 5.10.3' # can be removed when rails bug will be fixed
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
