@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class PresenceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'should create a presence' do
+    presence = build(:presence)
+    assert presence.save
+  end
 end
