@@ -3,22 +3,25 @@ class PresenceController < ApplicationController
 
 	def day
 		@users = User.where(active: true).order(:fullname)
-		@day = params['day'] && !params['day'].empty? ? Date.parse(params['day']) : Date.today
+		@day = params['day'].present? ? Date.parse(params['day']) : Date.today
+		@count = Presence.where(when: @day, user: @users).count
 	end
 
 	def mark
-		user = User.find(params['user_id'])
+		user = User.find_by_id(4444)#params['user_id'])
 		day = params['day'] || Date.today
 		if !user
-			render plain: 'utente non esistente', status: 422
+			render json: { message: 'utente non esistente' }.to_json, status: 422
 			return
 		end
 		if user.presences.where(when: day).size == 0
 			Presence.create(user: user, when: day)
+			increment = 1
 		else
 			Presence.where(user: user, when: day).destroy_all
+			increment = -1
 		end
-		render plain: user.id
+		render json: { increment: increment }.to_json
 	end
 
 	def stats

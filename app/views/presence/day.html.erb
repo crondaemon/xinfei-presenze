@@ -1,6 +1,7 @@
 <div class='container-fluid'>
 	<h1 class='page-header text-center'>
-		Presenze del giorno:<br/>
+		Presenze del giorno (<span id='counter'><%= @count %></span>):
+		<br/>
 		<span class='label label-primary text-center'><%= l(@day, format: '%e %B') %></span>
 	</h1>
 	<div class='row'>
@@ -24,19 +25,19 @@
 						</thead>
 						<tbody>
 							<% @users.each do |user| %>
-								<tr>
-									<td class='click-presence visible-xl' data-user='<%= user.id %>' data-day='<%= @day %>'>
+								<tr class='click-presence' data-user='<%= user.id %>' data-day='<%= @day %>'>
+									<td class='visible-xl' data-day='<%= @day %>'>
 										<%= user.fullname %>
 									</td>
-									<td class='click-presence day-font hidden-xl' data-user='<%= user.id %>' data-day='<%= @day %>'>
+									<td class='day-font hidden-xl'>
 										<%= user.fullname %>
 									</td>
-									<td class='click-presence' data-user='<%= user.id %>' data-day='<%= @day %>'>
+									<td>
 										<div id='user-<%= user.id %>-present' class='<%= user.present?(@day) ? "" : "display-none" %>'>
-											<div class='click-presence visible-xl'>
+											<div class='visible-xl'>
 												<%= icon('check') %>
 											</div>
-											<div class='click-presence day-font hidden-xl'>
+											<div class='day-font hidden-xl'>
 												<%= icon('check') %>
 											</div>
 										</div>

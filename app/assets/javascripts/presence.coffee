@@ -2,23 +2,28 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-toggleUser = (data) ->
-	user_id = data
-	$('#user-' + user_id + '-present').toggle()
+updateCounter = (data) ->
+	counter = $('#counter')
+	i = parseInt(counter.text(), 10)
+	increment = data['increment']
+	counter.text(i + increment)
 
 printError = (data) ->
-	message = data['responseText']
+	console.log(data)
+	message = data['responseJSON']['message']
 	alert("Errore: " + message)
+	location.reload()
 
 $(document).on "turbolinks:load", ->
 	$('.click-presence').on 'click', (e) ->
 		user_id = $(this).data('user')
 		day = $(this).data('day')
+		$('#user-' + user_id + '-present').toggle()
 		$.ajax({
 			url: '/presence/mark'
 			data: { user_id: user_id, day: day }
 			success: (data) ->
-				toggleUser(data)
+				updateCounter(data)
 			error: (data) ->
 				printError(data)
 		})
