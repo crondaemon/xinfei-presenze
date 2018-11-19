@@ -67,7 +67,7 @@ class PresenceController < ApplicationController
 
 	def bulk_save
 		names = params['names']
-		if !names
+		if names.blank?
 			flash[:error] = 'Bisogna inserire i nomi'
 			redirect_to presence_bulk_path
 			return

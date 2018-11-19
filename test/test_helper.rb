@@ -1,5 +1,8 @@
 require 'simplecov'
 SimpleCov.start('rails') do
+  add_filter "/lib/tasks/"
+  add_filter "/app/channels/"
+  add_filter "/app/jobs"
 end
 
 require File.expand_path('../../config/environment', __FILE__)
