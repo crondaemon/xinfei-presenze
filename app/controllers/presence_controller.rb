@@ -8,7 +8,7 @@ class PresenceController < ApplicationController
 	end
 
 	def mark
-		user = User.find_by_id(4444)#params['user_id'])
+		user = User.find_by_id(params['user_id'])
 		day = params['day'] || Date.today
 		if !user
 			render json: { message: 'utente non esistente' }.to_json, status: 422
