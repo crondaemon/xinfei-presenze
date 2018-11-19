@@ -72,7 +72,7 @@ class Chaltron::UsersController < ApplicationController
 
   private
   def create_params
-    params.require(:user).permit(:username, :email, :fullname,
+    params.require(:user).permit(:username, :email, :fullname, :active,
       :password, :password_confirmation, roles: [])
   end
 
@@ -81,7 +81,7 @@ class Chaltron::UsersController < ApplicationController
   end
 
   def self_update_params
-    params.require(:user).permit(:email, :fullname)
+    params.require(:user).permit(:email, :fullname, :active)
   end
 
   def filter_params

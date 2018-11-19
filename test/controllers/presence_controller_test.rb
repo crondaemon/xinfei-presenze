@@ -5,12 +5,20 @@ class PresenceControllerTest < ActionDispatch::IntegrationTest
     @user = create(:user)
   end
 
-  test 'should not get home' do
+  test 'should get home' do
+    get root_url
+    assert_response :success
+    sign_in @user
+    get root_url
+    assert_response :success
+  end
+
+  test 'should not get presence day' do
     get presence_day_url
     assert_response :redirect
   end
 
-  test 'should get home' do
+  test 'should get presence day' do
     sign_in @user
     get presence_day_url
     assert_response :success
