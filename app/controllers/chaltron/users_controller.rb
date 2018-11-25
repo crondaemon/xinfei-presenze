@@ -1,6 +1,6 @@
 class Chaltron::UsersController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource except: [:self_show, :self_edit, :self_update]
+  load_and_authorize_resource except: [:self_show, :self_edit, :self_update, :bulk, :bulk_save]
 
   respond_to :html
   default_log_category :user_admin
@@ -67,6 +67,30 @@ class Chaltron::UsersController < ApplicationController
         current: current_user.display_name, user: @user.display_name)
       @user.destroy
       respond_with(@user)
+    end
+  end
+
+  def bulk
+  end
+
+  def bulk_save
+    names = params['names']
+    if names.blank?
+      flash[:error] = 'Bisogna inserire i nomi'
+      redirect_to users_bulk_path
+      return
+    end
+
+    @results = {}
+
+    names.split("\n").each do |name|
+      fullname = name.strip.gsub("\t", ' ').titleize
+      username = fullname.gsub(' ', '').downcase
+      email = "#{username}@xinfei.org"
+      password = password_confirmation = SecureRandom.hex(16)
+      user = User.create(fullname: fullname, username: username, email: email, password: password,
+        password_confirmation: password_confirmation)
+      @results[name] = user.errors.full_messages
     end
   end
 

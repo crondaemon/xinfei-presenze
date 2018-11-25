@@ -50,4 +50,25 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_response :redirect
   end
+
+  test 'should import names' do
+    sign_in @user
+    names = [ 'user1', 'the user 2', 'user 3']
+    assert_difference('User.count', 3) do
+      post users_bulk_save_url, params: { names: names.join("\n") }
+    end
+    assert_response :success
+    names.each do |name|
+      expected = name.titleize
+      assert User.find_by_fullname(expected)
+    end
+  end
+
+  test 'should redirect if not names' do
+    sign_in @user
+    assert_no_difference('User.count') do
+      post users_bulk_save_url, params: { names: "" }
+    end
+    assert_response :redirect
+  end
 end

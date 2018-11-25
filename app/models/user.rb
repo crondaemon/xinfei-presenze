@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable,
          :timeoutable, :omniauthable
 
-  validates :username, presence: true, uniqueness: { scope: :provider, case_sensitive: false }
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 
   def display_name
     fullname.presence || username

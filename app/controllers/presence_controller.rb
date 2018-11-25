@@ -61,29 +61,4 @@ class PresenceController < ApplicationController
 			format.csv
 		end
 	end
-
-	def bulk
-	end
-
-	def bulk_save
-		names = params['names']
-		if names.blank?
-			flash[:error] = 'Bisogna inserire i nomi'
-			redirect_to presence_bulk_path
-			return
-		end
-
-		dupes = 0
-		total = 0
-
-		names.split("\n").each do |name|
-			actual = name.strip.gsub("\t", ' ')
-			User.find_or_create_by(fullname: actual) do |user|
-				dupes += 1 if !user.valid?
-			end
-			total += 1
-		end
-		flash[:notice] ="#{total} righe processate, #{total - dupes} nuovi, #{dupes} duplicati."
-		redirect_to root_url
-	end
 end
