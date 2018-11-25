@@ -14,20 +14,20 @@ class PresenceControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not get presence day' do
-    get presence_day_url
+    get presences_day_url
     assert_response :redirect
   end
 
   test 'should get presence day' do
     sign_in @user
-    get presence_day_url
+    get presences_day_url
     assert_response :success
   end
 
   test 'should mark a presence for today' do
     sign_in @user
     assert_difference('Presence.today') do
-      get presence_mark_url, params: { user_id: @user.id }
+      get presences_mark_url, params: { user_id: @user.id }
     end
     assert_response :success
   end
@@ -36,7 +36,7 @@ class PresenceControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
     day = 1.week.ago
     assert_difference('Presence.where(when: day).count') do
-      get presence_mark_url, params: { user_id: @user.id, day: day }
+      get presences_mark_url, params: { user_id: @user.id, day: day }
     end
     assert_response :success
   end
@@ -46,7 +46,7 @@ class PresenceControllerTest < ActionDispatch::IntegrationTest
     id = 1000000
     assert_not User.find_by_id(id)
     assert_no_difference('Presence.count') do
-      get presence_mark_url, params: { user_id: id }
+      get presences_mark_url, params: { user_id: id }
     end
     assert_response 422
   end
@@ -54,15 +54,15 @@ class PresenceControllerTest < ActionDispatch::IntegrationTest
   test 'should mark and unmark a user' do
     sign_in @user
     assert_no_difference('Presence.today') do
-      get presence_mark_url, params: { user_id: @user.id }
-      get presence_mark_url, params: { user_id: @user.id }
+      get presences_mark_url, params: { user_id: @user.id }
+      get presences_mark_url, params: { user_id: @user.id }
     end
     assert_response :success
   end
 
   test 'should get the stats' do
     sign_in @user
-    get presence_stats_url
+    get presences_stats_url
     assert_response :success
   end
 
@@ -70,7 +70,7 @@ class PresenceControllerTest < ActionDispatch::IntegrationTest
     user = create(:user)
     assert_equal true, user.active
     sign_in @user
-    get presence_disable_url, params: { id: user.id }
+    get presences_disable_url, params: { id: user.id }
     assert_response :redirect
     assert_equal false, user.reload.active
   end
@@ -78,7 +78,7 @@ class PresenceControllerTest < ActionDispatch::IntegrationTest
   test 'should get the list' do
     Presence.create(user: @user, when: Time.zone.now)
     sign_in @user
-    get presence_show_url
+    get presences_show_url
     assert_response :success
   end
 end
