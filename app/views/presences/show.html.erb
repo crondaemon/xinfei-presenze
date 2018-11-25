@@ -9,7 +9,7 @@
 			<%= content_tag :a, 'Cambia periodo', id: 'date-change' %>
 			<div class='panel panel-default display-none' id='date-change-form'>
 				<div class='panel-body'>
-					<%= bootstrap_form_tag url: presence_show_path, layout: :inline do |f| %>
+					<%= bootstrap_form_tag url: presences_show_path, layout: :inline do |f| %>
 						<%= f.text_field :from, skip_label: true, placeholder: 'Inizio', value: params['from'],
 							class: 'datetimepicker form-control' %>
 						<%= f.text_field :to, skip_label: true, placeholder: 'Fine', value: params['to'],
@@ -26,7 +26,7 @@
 								<tr>
 									<th></th>
 									<% @days.each do |day| %>
-										<th><%= link_to(l(day, format: '%e %b'), presence_day_path(day: day)) %></th>
+										<th><%= link_to(l(day, format: '%e %b'), presences_day_path(day: day)) %></th>
 									<% end %>
 									<% if current_user.is?(:admin) %>
 										<th></th>
@@ -76,7 +76,7 @@
 			</div>
 			<div class='panel panel-default'>
 				<div class='panel-body'>
-					<%= link_to('Esporta', presence_show_path(from: params['from'], to: params['to'], format: :csv),
+					<%= link_to('Esporta', presences_show_path(from: params['from'], to: params['to'], format: :csv),
 						class: 'btn btn-primary') %>
 				</div>
 			</div>

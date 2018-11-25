@@ -1,4 +1,4 @@
-class PresenceController < ApplicationController
+class PresencesController < ApplicationController
 	before_action :authenticate_user!
 
 	def day
@@ -38,7 +38,7 @@ class PresenceController < ApplicationController
 			user.active = false
 			user.save
 		end
-		redirect_to presence_day_path(day: day)
+		redirect_to presences_day_path(day: day)
 	end
 
 	def select
