@@ -15,7 +15,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
     user = build(:user)
     assert_difference('User.count') do
-      post users_url, params: { user: { fullname: user.fullname, email: user.email, password: user.password, active: user.active } }
+      post users_url, params: { user: { username: user.username, fullname: user.fullname, email: user.email,
+        password: user.password, active: user.active } }
     end
     assert User.find_by_email(user.email).active
   end

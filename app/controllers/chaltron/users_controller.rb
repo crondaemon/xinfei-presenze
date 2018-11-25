@@ -77,7 +77,7 @@ class Chaltron::UsersController < ApplicationController
   end
 
   def update_params
-    params.require(:user).permit({ roles: [] }, :email, :fullname, :active)
+    params.require(:user).permit({ roles: [] }, :email, :fullname, :active, :password, :password_confirmation)
   end
 
   def self_update_params
