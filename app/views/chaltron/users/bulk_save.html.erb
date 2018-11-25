@@ -1,0 +1,23 @@
+<div class='container-fluid'>
+	<h3 class='page-header text-center'>Importazione</h3>
+	<div class='row'>
+		<div class='col-md-12'>
+			<%= content_tag 'table', class: 'table table-striped' do %>
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Errori</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @results.each_pair do |name, errors| %>
+						<tr>
+							<td><%= name %></td>
+							<td><%= errors.empty? ? "OK" : errors.join(', ') %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			<% end %>
+		</div>
+	</div>
+</div>	
