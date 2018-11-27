@@ -20,7 +20,7 @@ $(document).on "turbolinks:load", ->
 		day = $(this).data('day')
 		$('#user-' + user_id + '-present').toggle()
 		$.ajax({
-			url: '/presence/mark'
+			url: '/presences/mark'
 			data: { user_id: user_id, day: day }
 			success: (data) ->
 				updateCounter(data)
