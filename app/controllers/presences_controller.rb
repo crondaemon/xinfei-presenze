@@ -30,7 +30,7 @@ class PresencesController < ApplicationController
 	end
 
 	def disable
-		user = User.find(params['id'])
+		user = User.find_by_id(params['id'])
 		day = params['day']
 		if !user
 			flash[:error] = 'Utente non trovato'

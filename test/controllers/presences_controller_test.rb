@@ -75,6 +75,12 @@ class PresenceControllerTest < ActionDispatch::IntegrationTest
     assert_equal false, user.reload.active
   end
 
+  test 'should not give error for non-existent user' do
+    sign_in @user
+    get presences_disable_url, params: { id: -1 }
+    assert_response :redirect
+  end
+
   test 'should get the list' do
     Presence.create(user: @user, when: Time.zone.now)
     sign_in @user
