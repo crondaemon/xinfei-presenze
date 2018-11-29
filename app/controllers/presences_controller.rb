@@ -45,8 +45,8 @@ class PresencesController < ApplicationController
 	end
 
 	def show
-		@from = params['from'] && !params['from'].empty? ? Date.parse(params['from']) : 3.months.ago
-		@to = params['to'] && !params['to'].empty? ? Date.parse(params['to']) : Date.today
+		@from = params['from'].present? ? Date.parse(params['from']) : 3.months.ago
+		@to = params['to'].present? ? Date.parse(params['to']) : Date.today
 		@presence_persons = {}
 		presences = Presence.where(when: @from..@to)
 		presences.each do |presence|
