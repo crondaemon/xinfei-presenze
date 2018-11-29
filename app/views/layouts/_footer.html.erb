@@ -6,5 +6,10 @@
       <%= link_to 'chaltron', 'https://github.com/vicvega/chaltron', class: 'navbar-link' %>
     <% end %>
     <%= content_tag :p, revision, class: 'navbar-text pull-right' unless revision.nil? %>
+    <%= content_tag :p, class: 'navbar-text no-margin-right' do %>
+      <% if @count %>
+        Allievi presenti: <%= content_tag :p, @count, class: 'margin-left-10 navbar-text', id: 'counter' %>
+      <% end %>
+    <% end %>
   </div>
 </nav>
