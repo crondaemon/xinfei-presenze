@@ -35,6 +35,9 @@ class PresencesController < ApplicationController
 		if !user
 			flash[:error] = 'Utente non trovato'
 		else
+			# Delete any presence of this user for the chosen day
+			Presence.where(when: day, user: user).destroy_all
+
 			user.active = false
 			user.save
 		end
