@@ -4,7 +4,7 @@
 			<div class='panel panel-heading'>
 				<div class='jumbotron'>
 					<h1>Scegli il giorno</h1>
-					<%= bootstrap_form_tag url: presence_day_path, layout: :inline do |f| %>
+					<%= bootstrap_form_tag url: presences_day_path, layout: :inline do |f| %>
 						<%= f.text_field :day, skip_label: true, placeholder: 'Scegli il giorno', class: 'datetimepicker' %>
 						<%= f.submit 'Vai', class: 'btn btn-primary' %>
 					<% end %>
