@@ -61,3 +61,5 @@ gem 'chartkick'
 gem 'rails-bootstrap-datepicker'
 # Force activejob version to avoid vulnerable version
 gem "activejob", ">= 5.1.6.1"
+gem "actionview", ">= 5.1.6.2"
+gem "bootstrap-sass", ">= 3.4.1"
