@@ -37,7 +37,7 @@
 							<tbody>
 								<% @presence_persons.each_pair do |name, days| %>
 									<tr>
-										<td><%= name %></td>
+										<td><%= content_tag(:span, name, class: 'text-nowrap') %></td>
 										<% @days.each do |day| %>
 											<td>
 												<% if days.include? day %>
