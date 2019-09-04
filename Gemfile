@@ -57,9 +57,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'chaltron'
-gem 'chartkick'
+gem "chartkick", ">= 3.2.0"
 gem 'rails-bootstrap-datepicker'
 # Force activejob version to avoid vulnerable version
 gem "activejob", ">= 5.1.6.1"
 gem "actionview", ">= 5.1.6.2"
 gem "bootstrap-sass", ">= 3.4.1"
+gem "nokogiri", ">= 1.10.4"
