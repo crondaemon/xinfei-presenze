@@ -35,4 +35,8 @@ class User < ActiveRecord::Base
   def present?(day)
     self.presences.where(when: day).size > 0
   end
+
+  def ldap_user?
+    false
+  end
 end
