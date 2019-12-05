@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.5.1'
-
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -66,3 +64,10 @@ gem "bootstrap-sass", ">= 3.4.1"
 gem "nokogiri", ">= 1.10.4"
 gem "omniauth", ">= 1.9.0"
 gem "devise", ">= 4.7.1"
+gem "did_you_mean"
+gem "etc"
+gem "fileutils"
+gem "zlib"
+gem "stringio"
+gem "date"
+gem "strscan"
