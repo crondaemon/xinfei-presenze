@@ -15,6 +15,7 @@ before_install:
   - mkdir geckodriver
   - tar -xzf geckodriver-v0.23.0-linux64.tar.gz -C geckodriver
   - export PATH=$PATH:$PWD/geckodriver
+  - bundle install
 script:
   - bundle exec rails db:setup RAILS_ENV=test
   - bundle exec rake
