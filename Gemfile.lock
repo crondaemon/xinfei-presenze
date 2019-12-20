@@ -163,7 +163,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.21.0)
     public_suffix (3.0.1)
-    puma (3.11.0)
+    puma (3.12.2)
     pyu-ruby-sasl (0.0.3.3)
     rack (2.0.8)
     rack-test (1.1.0)
@@ -294,7 +294,7 @@ DEPENDENCIES
   nokogiri (>= 1.10.4)
   omniauth (>= 1.9.0)
   pg (~> 0.18)
-  puma (~> 3.7)
+  puma (~> 3.12)
   rails (~> 5.1.4)
   rails-bootstrap-datepicker
   sass-rails (~> 5.0)
