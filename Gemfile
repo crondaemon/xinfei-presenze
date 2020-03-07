@@ -32,7 +32,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'sqlite3'
   gem 'simplecov'
-  gem 'minitest',  '<= 5.10.3' # can be removed when rails bug will be fixed
+  gem 'minitest'
   gem 'factory_bot_rails'
   gem 'faker'
 end
