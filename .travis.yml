@@ -1,9 +1,6 @@
 dist: bionic
 language: ruby
-cache:
-  bundler: true
-  directories:
-    - /home/travis/.rvm
+cache: bundler
 rvm:
   - 2.5.1
 env:
