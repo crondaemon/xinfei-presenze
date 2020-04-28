@@ -28,6 +28,7 @@ class PresenceControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
     assert_difference('Presence.today') do
       get presences_mark_url, params: { user_id: @user.id }
+      assert_response :success
     end
     assert_response :success
   end
