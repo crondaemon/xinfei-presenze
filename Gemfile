@@ -53,7 +53,7 @@ group :development do
 end
 
 gem 'chaltron', "< 1.0"
-gem "chartkick", "~> 3.2"
+gem "chartkick", "~> 3.4"
 gem 'rails-bootstrap-datepicker'
 # Force activejob version to avoid vulnerable version
 gem "bootstrap-sass", "~> 3.4.1"
