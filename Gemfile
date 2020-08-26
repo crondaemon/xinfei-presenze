@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
 # Use Puma as the app server
-gem 'puma', '~> 4.3'
+gem 'puma', '~> 4.3.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -53,10 +53,12 @@ group :development do
 end
 
 gem 'chaltron', "< 1.0"
-gem "chartkick", "~> 3.2"
+gem "chartkick", "~> 3.4.0"
 gem 'rails-bootstrap-datepicker'
 # Force activejob version to avoid vulnerable version
 gem "bootstrap-sass", "~> 3.4.1"
 gem "nokogiri", "~> 1.10.4"
 gem "omniauth", "~> 1.9.0"
 gem "devise", "~> 4.7.1"
+gem "websocket-extensions", "~> 0.1.5"
+gem "rack", "~> 2.2.3"
