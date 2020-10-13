@@ -310,4 +310,4 @@ DEPENDENCIES
   websocket-extensions (~> 0.1.5)
 
 BUNDLED WITH
-   1.17.2
+   1.16.2
