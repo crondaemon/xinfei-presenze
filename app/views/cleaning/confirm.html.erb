@@ -1,0 +1,22 @@
+<div class='container-fluid'>
+  <h1 class='page-header text-center'>Turno di pulizia registrato per:</h1>
+  <div class='row'>
+    <div class='col-md-12'>
+      <ul class='list-group'>
+        <% @cleaners_today.each do |cleaner| %>
+          <li class='list-group-item'><%= cleaner.fullname %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <h1 class='page-header text-center'>Turno di riposo registrato per:</h1>
+  <div class='row'>
+    <div class='col-md-12'>
+      <ul class='list-group'>
+        <% @rests_today.each do |rest| %>
+          <li class='list-group-item'><%= rest.fullname %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 'presences/show'
   get 'users/bulk', to: 'chaltron/users#bulk'
   post 'users/bulk_save', to: 'chaltron/users#bulk_save'
+  get 'cleaning', to: 'cleaning#today'
+  post 'cleaning/confirm'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

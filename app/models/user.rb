@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   include Authorizable
 
   has_many :presences, dependent: :destroy
+  scope :shifts, -> { select('users.*, (cleaning_shifts - rest_shifts) as shifts') }
+  scope :cleaners, -> { where('users.cleaner': true) }
+  scope :today, -> { where(id: Presence.today.select(:user_id)) }
 
   # Include default devise modules. Others available are:
   # :registerable, :confirmable, :lockable and :omniauthable

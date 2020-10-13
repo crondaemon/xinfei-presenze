@@ -1,0 +1,13 @@
+<div class='container-fluid'>
+  <h1 class='page-header text-center'>Pulizie del giorno</h1>
+  <div class='row'>
+    <div class='col-md-12'>
+      <ul class='list-group'>
+        <% @cleaners.each do |cleaner| %>
+          <li class='list-group-item'><%= cleaner.fullname %></li>
+        <% end %>
+      </ul>
+      <%= button_to 'Conferma', cleaning_confirm_path, params: { ids: @cleaners.pluck(:id) } , class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

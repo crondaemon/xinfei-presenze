@@ -26,7 +26,7 @@ class PresenceControllerTest < ActionDispatch::IntegrationTest
 
   test 'should mark a presence for today' do
     sign_in @user
-    assert_difference('Presence.today') do
+    assert_difference('Presence.today_count') do
       get presences_mark_url, params: { user_id: @user.id }
       assert_response :success
     end
@@ -54,7 +54,7 @@ class PresenceControllerTest < ActionDispatch::IntegrationTest
 
   test 'should mark and unmark a user' do
     sign_in @user
-    assert_no_difference('Presence.today') do
+    assert_no_difference('Presence.today_count') do
       get presences_mark_url, params: { user_id: @user.id }
       get presences_mark_url, params: { user_id: @user.id }
     end
