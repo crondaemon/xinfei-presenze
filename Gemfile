@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
+  repo_name = '#{repo_name}/#{repo_name}' unless repo_name.include?('/')
+  'https://github.com/#{repo_name}.git'
 end
 
 
@@ -35,7 +35,7 @@ group :development, :test do
   gem 'minitest'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem "pry"
+  gem 'pry'
 end
 
 group :production do
@@ -52,13 +52,13 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem 'chaltron', "< 1.0"
-gem "chartkick", "~> 3.4.0"
+gem 'chaltron', '< 1.0'
+gem 'chartkick', '~> 3.4.0'
 gem 'rails-bootstrap-datepicker'
 # Force activejob version to avoid vulnerable version
-gem "bootstrap-sass", "~> 3.4.1"
-gem "nokogiri", "~> 1.10.4"
-gem "omniauth", "~> 1.9.0"
-gem "devise", "~> 4.7.1"
-gem "websocket-extensions", "~> 0.1.5"
-gem "rack", "~> 2.2.3"
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'nokogiri', '~> 1.10.4'
+gem 'omniauth', '~> 1.9.0'
+gem 'devise', '~> 4.7.1'
+gem 'websocket-extensions', '~> 0.1.5'
+gem 'rack', '~> 2.2.3'
