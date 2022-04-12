@@ -58,7 +58,7 @@ gem 'chartkick', '~> 3.4.0'
 gem 'rails-bootstrap-datepicker'
 # Force activejob version to avoid vulnerable version
 gem 'bootstrap-sass', '~> 3.4.1'
-gem 'nokogiri', '~> 1.12.5'
+gem 'nokogiri', '~> 1.13.4'
 gem 'omniauth', '~> 1.9.0'
 gem 'devise', '~> 4.7.1'
 gem 'websocket-extensions', '~> 0.1.5'
